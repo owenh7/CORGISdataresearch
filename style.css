@@ -5,6 +5,7 @@ ul {
 }
 li {
   float: left;
+ border-right: 1px solid #bbb;
 }
 a {
   display: block;
@@ -15,3 +16,4 @@ li a {
   display: block;
   padding: 8px;
   background-color: #dddddd;
+  
