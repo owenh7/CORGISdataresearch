@@ -17,3 +17,7 @@ li a {
   padding: 8px;
   background-color: #dddddd;
   
+  li:last-child {
+  border-right: none;
+}
+  
