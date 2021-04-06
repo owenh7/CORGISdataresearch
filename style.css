@@ -12,18 +12,25 @@ li a {
   background-color: #000000;
 }
   .active {
-  background-color: #4CAF50;
-     text-decoration: none!important;
-
-    -webkit-box-shadow: none!important;
-    box-shadow: none!important;
+  background-color: #4CAF50;    
 }
   li a:hover {
-  background-color: #dddddd;
-     text-decoration: none!important;
+  background-color: #dddddd;  
+}
+a:link {
+  text-decoration: none;
+}
 
-    -webkit-box-shadow: none!important;
-    box-shadow: none!important;
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
 }
 
 
