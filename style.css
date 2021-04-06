@@ -16,10 +16,7 @@ li a {
   display: block;
   padding: 8px;
   background-color: #dddddd;
-  
-  li:last-child {
-  border-right: none;
-}
+ 
   .active {
   background-color: #4CAF50;
 }
