@@ -12,11 +12,6 @@ a {
   padding: 8px;
   background-color: #dddddd;
 }
-li a {
-  display: block;
-  padding: 8px;
-  background-color: #dddddd;
- 
   .active {
   background-color: #4CAF50;
 }
