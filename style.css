@@ -13,9 +13,17 @@ li a {
 }
   .active {
   background-color: #4CAF50;
+     text-decoration: none!important;
+
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
 }
   li a:hover {
   background-color: #dddddd;
+     text-decoration: none!important;
+
+    -webkit-box-shadow: none!important;
+    box-shadow: none!important;
 }
 
 
