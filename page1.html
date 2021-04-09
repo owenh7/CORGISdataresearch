@@ -24,26 +24,26 @@
 </nav>
 <br>
      <a href="page1.html"  style="text-decoration:none;"></a>
-     <title>AgeStatistics</title>
-<h1>Age Statistics</h1>
+     <title>MedalofHonorStatistics</title>
+<h1>Medal of Honor Statistics</h1>
 <p>Select Name of Recipient</p>
 <form action="/">
-  <label for="States">Choose a State:</label>
-  <select name="states">
-    {{states}}
+  <label for="Medals">Choose a Recipient:</label>
+  <select name="medals">
+    {{medals}}
   </select>
   <br><br>
   <input type="submit">
 </form>
-<p> Percentage of the population under 18 years old: {{ average_age }}%</p>
+<p> Recipients of the Medal: {{ average_name }}%</p>
 <form action="/">
-  <label for="Counties">Choose a County:</label>
-  <select name="counties">
-    {{counties}}
+  <label for="Medals">Choose a Recipient:</label>
+  <select name="recipients">
+    {{recipients}}
   </select>
   <br><br>
   <input type="submit">
 </form>
-<p> Percentage of the population under 18 years old within the county: {{ county_age }}%</p>
+<p> Percentage of the population under 18 years old within the county: {{ recipient_age }}%</p>
   </body>
     </html>
