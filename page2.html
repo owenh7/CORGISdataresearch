@@ -24,5 +24,15 @@
 </nav>
 <br>
      <a href="page1.html"  style="text-decoration:none;"></a>
+     
+     <p> Percentage of the population under 18 years old within the county: {{ county_age }}%</p>
+<form action="/">
+  <label for="Counties">Choose a County:</label>
+  <select name="counties">
+    {{counties}}
+  </select>
+  <br><br>
+  <input type="submit">
+</form>
   </body>
     </html>
