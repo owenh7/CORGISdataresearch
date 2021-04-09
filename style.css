@@ -23,6 +23,9 @@ li a {
   font-family: "Lucida Console", "Courier New", monospace;
   font-size: 18px;
 }
+div.fixed {
+  position: fixed;
+}
 
 
     
