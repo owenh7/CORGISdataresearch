@@ -21,8 +21,7 @@ li a {
 }
   .active {
   background-color: #4CAF50; 
-    position: fixed;
-  top: 0;
+   
 }
   li a:hover {
   background-color: #ffffff;  
