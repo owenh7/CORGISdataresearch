@@ -23,7 +23,6 @@ li a {
   font-family: "Lucida Console", "Courier New", monospace;
   font-size: 18px;
 }
-#nav {
     #nav {
     list-style: none;
     font-weight: bold;
@@ -33,12 +32,12 @@ li a {
     background-color: #000000;
     height:40px;
 }
-     }
 img {
   display: block;
   margin-left: auto;
   margin-right: auto;
   width: 40%;
+  border: 5px solid #555;
 }
 
 
