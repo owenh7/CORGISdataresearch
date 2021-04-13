@@ -34,7 +34,12 @@ li a {
     height:40px;
 }
      }
-
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
     
 
 
