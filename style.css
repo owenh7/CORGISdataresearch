@@ -14,8 +14,7 @@ li a {
   background-color: #dddddd;
   color: #000000;
   text-decoration: none;
-  position: fixed;
-  top: 0;
+ 
 }
   .active {
   background-color: #4CAF50; 
