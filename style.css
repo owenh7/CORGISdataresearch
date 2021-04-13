@@ -7,8 +7,6 @@ ul {
 }
 li {
   float: left;
-  position: fixed;
-  top: 0;
 }
 li a {
   display: block;
