@@ -2,9 +2,13 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+  position: fixed;
+  top: 0;
 }
 li {
   float: left;
+  position: fixed;
+  top: 0;
 }
 li a {
   display: block;
@@ -12,12 +16,18 @@ li a {
   background-color: #dddddd;
   color: #000000;
   text-decoration: none;
+  position: fixed;
+  top: 0;
 }
   .active {
-  background-color: #4CAF50;    
+  background-color: #4CAF50; 
+    position: fixed;
+  top: 0;
 }
   li a:hover {
   background-color: #ffffff;  
+    position: fixed;
+  top: 0;
 }
   p1 {
   font-family: "Lucida Console", "Courier New", monospace;
@@ -31,6 +41,8 @@ li a {
     text-align: center;
     background-color: #000000;
     height:40px;
+      position: fixed;
+  top: 0;
 }
 img {
   display: block;
