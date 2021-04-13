@@ -11,12 +11,12 @@ def render_main():
         recipients = json.load(medal_data)
         
     if 'recipients' in request.args:
-        return render_template('page1.html', recipients = get_state_options(medals), average_age = average_age(get_medal_recipient(request.args['medals'],medals), medals), medals = get_medal_options(get_medal_recipient(request.args['medals'],medals),medals), medal_age = get_medal_age(request.args['medals'],medals))
+        return render_template('page1.html', recipients = get_name_options(name), average_age = average_age(get_name_recipient(request.args['name'],name), name), name = get_name_options(get_name_recipient(request.args['name'],name),medals), name_age = get_name_age(request.args['medals'],medals))
     if 'medals' in request.args:
-        return render_template('page1.html', recipients = get_state_options(medals), average_age = average_age(request.args['states'], medals), medals = get_medal_options(request.args['recipients'],medals))
+        return render_template('page1.html', recipients = get_name_options(name), average_age = average_age(request.args['states'], name), name = get_name_options(request.args['recipients'],name))
    
-    elif 'recipients' not in request.args and 'medals' not in request.args:
-        return render_template('page1.html', recipients = get_recipient_options(medals))
+    elif 'recipients' not in request.args and 'name' not in request.args:
+        return render_template('page1.html', recipients = get_recipient_options(name))
 def get_recipient_options(medals):
     recipients = []
     print("RunningOP")
