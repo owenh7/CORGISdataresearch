@@ -7,8 +7,8 @@ app = Flask(__name__)
 @app.route("/")
 def render_main():
     print("RunningMain")
-    with open('medal_of_honor.json') as medal_data:
-        recipients = json.load(medal_data)
+    with open('medal_of_honor.json') as name_data:
+        recipients = json.load(name_data)
         
     if 'recipients' in request.args:
         return render_template('page1.html', recipients = get_name_options(name), average_age = average_age(get_name_recipient(request.args['name'],name), name), name = get_name_options(get_name_recipient(request.args['name'],name),medals), name_age = get_name_age(request.args['medals'],medals))
