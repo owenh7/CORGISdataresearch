@@ -44,7 +44,7 @@ def render_main():
         
         data = json.loads(people_string)
         
-        print(data)
+        print(person['name'])
         
         
   
