@@ -1,39 +1,8 @@
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  position: fixed;
-  top: 0;
-}
-li {
-  float: left;
-}
-li a {
-  display: block;
-  padding: 8px;
-  background-color: #dddddd;
-  color: #000000;
-  text-decoration: none;
- 
-}
-  .active {
-  background-color: #4CAF50; 
-}
-  li a:hover {
-  background-color: #ffffff;  
-}
   p1 {
   font-family: "Lucida Console", "Courier New", monospace;
   font-size: 18px;
 }
-    #nav {
-    list-style: none;
-    font-weight: bold;
-    margin-bottom: 10px;
-    width: 100%;
-    text-align: center;
-    background-color: #000000;
-    height:40px;
+   
 }
 img {
   display: block;
