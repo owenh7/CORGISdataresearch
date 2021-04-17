@@ -1,7 +1,20 @@
 {% extends "layout.html" %}
 
-{% set active_page = "home" %}
+{% set active_page = "page2" %}
 
 {% block title %}Home{% endblock %}
 
 {% block content %}
+<br>
+     <a href="page1.html"  style="text-decoration:none;"></a>
+     
+     <p> Percentage of the population under 18 years old:</p>
+<form action="/">
+  <label for="Counties">Choose a Medal:</label>
+  <select name="medals">
+    {{medals}}
+  </select>
+  <br><br>
+  <input type="submit">
+</form>
+{% endblock %}
