@@ -5,3 +5,17 @@
 {% block title %}Home{% endblock %}
 
 {% block content %}
+<br>
+     <a href="page1.html"  style="text-decoration:none;"></a>
+     <title>MedalofHonorStatistics</title>
+<h1>Medal of Honor Statistics</h1>
+<p>Select Name of Recipient</p>
+<form action="/">
+  <label for="Citations">Choose a Recipient:</label>
+  <select name="citations">
+    {{citations}}
+  </select>
+  <br><br>
+  <input type="submit">
+</form>
+{% endblock %}
