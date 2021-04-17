@@ -9,7 +9,7 @@ def render_main():
     print("RunningMain")
     with open('medal_of_honor.json') as medalofhonor_data:
         names = json.load(medalofhonor_data)
-    return render_template('index.html')
+    return render_template('layout.html')
         
     if 'names' in request.args:
         return render_template('page1.html', citations = get_citation_options(names), average_age = average_age(get_names_citation(request.args['names'],names), names), names = get_name_options(get_name_citation(request.args['names'],names),names), name_age = get_name_age(request.args['names'],names))
