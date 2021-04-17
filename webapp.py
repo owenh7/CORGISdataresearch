@@ -65,7 +65,7 @@ def get_county_state(county, counties):
             state = data["State"]
     return state
 
-if name == "main":
+if __name__ == "__main__":
     app.run(debug=True)
         
   
