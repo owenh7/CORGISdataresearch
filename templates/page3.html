@@ -1,50 +1,20 @@
 {% extends "layout.html" %}
 
-{% set active_page = "page3" %}
+{% set active_page = "page2" %}
 
 {% block title %}Home{% endblock %}
 
 {% block content %}
 <br>
      <a href="page1.html"  style="text-decoration:none;"></a>
-  </head>
-   <body id="bodythree">
-    <script>
-window.onload = function () {
-	
-var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
-	
-	title:{
-		text:"Medal of Honor Medals Earned Per Branch of Military"
-	},
-	axisX:{
-		interval: 1
-	},
-	axisY2:{
-		interlacedColor: "rgba(1,77,101,.2)",
-		gridColor: "rgba(1,77,101,.1)",
-		title: "Number of Medals"
-	},
-	data: [{
-		type: "bar",
-		name: "companies",
-		axisYType: "secondary",
-		color: "#014D65",
-		dataPoints: [
-			{ y: 2404, label: "Army", indexLabel: "\u2191 2404"},
-			{ y: 746, label: "Navy", indexLabel: "\u2191 746"},
-			{ y: 297, label: "Marine Corps", indexLabel: "\u2191 297"},
-			{ y: 17, label: "Air Force", indexLabel: "\u2191 17"},
-			{ y: 1, label: "Coast Guard", indexLabel: "\u2191 1"},
-		]
-	}]
-});
-chart.render();
-
-}
-</script>
-<div class="center">
-<p4>The graph above shows how many medals have been awarded to each branch of the military.</p4>
-</div>
+     
+     <p> Percentage of the population under 18 years old:</p>
+<form action="/">
+  <label for="Counties">Choose a Medal:</label>
+  <select name="medals">
+    {{medals}}
+  </select>
+  <br><br>
+  <input type="submit">
+</form>
 {% endblock %}
