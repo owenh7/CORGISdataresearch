@@ -20,7 +20,7 @@ def render_first2():
 def render_first3():
     return render_template('page3.html')
 @app.route("/p4")
-def render_first3():
+def render_first4():
     return render_template('page4.html')
     if 'names' in request.args:
         return render_template('page2.html', citations = get_citation_options(names), average_age = average_age(get_names_citation(request.args['names'],names), names), names = get_name_options(get_name_citation(request.args['names'],names),names), name_age = get_name_age(request.args['names'],names))
