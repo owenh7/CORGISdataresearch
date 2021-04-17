@@ -68,5 +68,4 @@ def get_county_state(county, counties):
 if name == "main":
     app.run(debug=True)
         
-        
   
