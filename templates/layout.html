@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name+"viewport" content="width=device-width">
    <link rel="stylesheet" href="style.css">
-  <title>Medal of Honor</title>
+  <title>{% block title %}{% endblock %} - Medal of Honor</title>
   <style>
     h1.groove {border-style: groove;}
   </style>
@@ -40,5 +40,6 @@
       <div class="center">
   <p4>The image above shows the three varients of the medal of honor that can be recieved.</p4>
 </div>
+      {% block content %}{% endblock %}
       </body>
       </html>
