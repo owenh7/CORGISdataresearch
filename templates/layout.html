@@ -22,13 +22,16 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav">
          <li {% if active_page == "home" %} class="nav-item active"{% else %}class="nav-item"{% endif %}>
-           <a class="nav-link" href="/p1">Information</a>
+           <a class="nav-link" href="/p1">Home</a>
          </li>
-         <li {% if active_page == "statedeathrates" %} class="nav-item active"{% else %}class="nav-item"{% endif %}>
-           <a class="nav-link" href="/p2">State Death Rates</a>
+         <li {% if active_page == "page2" %} class="nav-item active"{% else %}class="nav-item"{% endif %}>
+           <a class="nav-link" href="/p2">Page 2</a>
          </li>
-         <li {% if active_page == "statetotal" %} class="nav-item active"{% else %}class="nav-item"{% endif %}>
-           <a class="nav-link" href="/p3">State Total Death Rates</a>
+         <li {% if active_page == "page3" %} class="nav-item active"{% else %}class="nav-item"{% endif %}>
+           <a class="nav-link" href="/p3">Page 3</a>
+         </li> 
+         <li {% if active_page == "page4" %} class="nav-item active"{% else %}class="nav-item"{% endif %}>
+           <a class="nav-link" href="/p4">Page 4</a>
          </li> 
        </ul>
      </div> 
