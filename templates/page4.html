@@ -6,7 +6,7 @@
 
 {% block content %}
 <p> Rate of death per 100,000 people: {{ total_rate }}%</p>
- 
+ <script>
 window.onload = function () {
 	
 var chart = new CanvasJS.Chart("chartContainer", {
@@ -39,7 +39,7 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	}]
 });
 chart.render();
-
+<script>
 }
 
 
