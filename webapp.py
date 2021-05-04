@@ -26,34 +26,8 @@ def render_first4():
         return render_template('page2.html', citations = get_citation_options(names), average_age = average_age(get_names_citation(request.args['names'],names), names), names = get_name_options(get_name_citation(request.args['names'],names),names), name_age = get_name_age(request.args['names'],names))
     if 'citations' in request.args:
         return render_template('page2.html', citations = get_citation_options(names), average_age = average_age(request.args['citations'], names), names = get_name_options(request.args['citations'],names))
-   
-    elif 'citations' not in request.args and 'names' not in request.args:
-        return render_template('page1.html', citations = get_citation_options(names))
-def get_citation_options(names):
-    citations = []
-    print("RunningOP")
-    for data in names:
-        if data["Citation"] not in states:
-            citations.append(data["Citation"])
-    options = ""
-    for data in citations:
-        options = options + Markup("<option value="" + data + "">" + data + "</option>")
-    return options
-
-def average_age(citation, names):
-    print("RunningAge")
-    points = float(0)
-    total = float(0)
-    for name in names:
-        if name["Citation"] == citation:
-            total = total + name["Age"]["Percent Under 18 Years"]
-            points=points + 1
-    avg = float(total//points)
-    return avg
-
-
-
-if __name__ == "__main__":
+  
+    if __name__ == "__main__":
     app.run(debug=True)
         
   
