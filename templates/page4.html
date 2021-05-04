@@ -5,36 +5,29 @@
 {% block title %}Graph{% endblock %}
 
 {% block content %}
-<p> Medal of honors for each military branch: {{ total_rate }}%</p>
- <script>
+<script>
 window.onload = function () {
-	
+
 var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: false,
+	animationEnabled: true,
 	theme: "light2", // "light1", "light2", "dark1", "dark2"
 	title:{
-		text:"Medal of Honor Medals Earned Per Branch of Military"
+		text: "Number of Medals Earned in Each Branch of Military"
 	},
-	axisX:{
-		interval: 1
-	},
-	axisY2:{
-		interlacedColor: "rgba(1,77,101,.2)",
-		gridColor: "rgba(1,77,101,.1)",
+	axisY: {
 		title: "Number of Medals"
 	},
-	data: [{
-		type: "bar",
-		name: "companies",
-		axisYType: "secondary",
-		color: "#014D65",
-		dataPoints: [
-			{ y: 2404, label: "Army", indexLabel: "\u2191 2404"},
-			{ y: 746, label: "Navy", indexLabel: "\u2191 746"},
-			{ y: 297, label: "Marine Corps", indexLabel: "\u2191 297"},
-			{ y: 17, label: "Air Force", indexLabel: "\u2191 17"},
-			{ y: 1, label: "Coast Guard", indexLabel: "\u2191 1"},
-			
+	data: [{        
+		type: "column",  
+		showInLegend: true, 
+		legendMarkerColor: "grey",
+		legendText: "Branch of Military",
+		dataPoints: [      
+			{ y: 2404, label: "Army \u2191 2404"},
+			{ y: 746,  label: "Navy \u2191 746"},
+			{ y: 297,  label: "Marine Corps \u2191 297"},
+			{ y: 17,  label: "Aiir Force \u2191 17"},
+			{ y: 1,  label: "Coast Guard \u2191 1" }
 		]
 	}]
 });
@@ -42,6 +35,5 @@ chart.render();
 
 }
 </script>
-<div id="chartContainer" style="height: 300px; width: 100%;"></div>
-<script src="https://canvasjs.com/assets/script/canvasjs.min.js%22%3E></script>
-{% endblock %}
+<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
