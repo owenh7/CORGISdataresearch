@@ -9,7 +9,7 @@
 window.onload = function () {
 
 var chart = new CanvasJS.Chart("chartContainer", {
-	animationEnabled: true,
+	animationEnabled: false,
 	theme: "light2", // "light1", "light2", "dark1", "dark2"
 	title:{
 		text: "Number of Medals Earned in Each Branch of Military"
@@ -32,8 +32,8 @@ var chart = new CanvasJS.Chart("chartContainer", {
 	}]
 });
 chart.render();
-{% endblock %}
 }
 </script>
 <div id="chartContainer" style="height: 370px; width: 100%;"></div>
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+{% endblock %}
