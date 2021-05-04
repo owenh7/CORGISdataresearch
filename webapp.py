@@ -2,14 +2,14 @@ from flask import Flask, request, Markup, render_template, flash, Markup
 import os
 import json
 
-app = Flask(__name__, template_folder='Templates')
+app = Flask(__name__, template_folder='templates')
 
 
 @app.route("/")
 def render_main():
     print("RunningMain")
-    with open('cancer.json') as cancer_data:
-        states = json.load(cancer_data)
+    with open('medal_of_honor.json') as medal_data:
+        states = json.load(medal_data)
     return render_template('page1.html')
 @app.route("/p1")
 def render_first():
@@ -20,6 +20,9 @@ def render_first2():
 @app.route("/p3")
 def render_first3():
     return render_template('page3.html')
+@app.route("/p4")
+def render_first4():
+    return render_template('page4.html')
 
 
         
