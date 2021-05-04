@@ -57,7 +57,6 @@ def get_county_options(states,counties):
     for county in counties:
         if county["State"] == states :
             countylist.append(county["County"])
-    options = ""
     for data in countylist:
         options = options + Markup("<option value="" + data + "">" + data + "</option>")
     return options
