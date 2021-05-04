@@ -19,6 +19,9 @@ def render_first2():
 @app.route("/p3")
 def render_first3():
     return render_template('page3.html')
+@app.route("/p4")
+def render_first4():
+    return render_template('page4.html')
   
     if __name__ == "__main__":
     app.run(debug=True)
