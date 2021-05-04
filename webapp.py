@@ -51,30 +51,7 @@ def average_age(citation, names):
     avg = float(total//points)
     return avg
 
-def get_county_options(states,counties):
-    countylist = []
-    print("RunningCOP")
-    for county in counties:
-        if county["State"] == states :
-            countylist.append(county["County"])
-            options = ""
-    for data in countylist:
-        options = options + Markup("<option value="" + data + "">" + data + "</option>")
-    return options
 
-def get_county_age(county, counties):
-    print("RunningCAge")
-    for county1 in counties:
-        if county1["County"] == county:
-            return county1["Age"]["Percent Under 18 Years"]
- 
-def get_county_state(county, counties):
-    print("RunningState")
-    state = ""
-    for data in counties:
-        if data["County"] == county:
-            state = data["State"]
-    return state
 
 if __name__ == "__main__":
     app.run(debug=True)
