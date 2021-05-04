@@ -9,10 +9,8 @@ def render_main():
     print("RunningMain")
     with open('medal_of_honor.json') as medalofhonor_data:
         names = json.load(medalofhonor_data)
-        
-    return render_template('page1.html')
+          
 @app.route("/p1")
-
 def render_first():
     return render_template('page1.html')
 
