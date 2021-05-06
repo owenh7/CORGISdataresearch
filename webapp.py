@@ -11,12 +11,7 @@ def render_main():
     with open('medal_of_honor.json') as medal_data:
         names = json.load(medal_data)
     return render_template('page1.html')
-@app.route("/p1")
-def render_first():
-    return render_template('page1.html')
-@app.route("/p2")
-def render_first2():
-    return render_template('page2.html')
+
     if 'names' in request.args:
         return render_template('layout.html', years = get_year_options(names), average_age = average_age(get_name_year(request.args['names'],names), names), names = get_name_options(get_name_year(request.args['names'],names),names), names_age = get_name_age(request.args['names'],names))
     if 'years' in request.args:
@@ -24,7 +19,7 @@ def render_first2():
     elif 'years' not in request.args and 'names' not in request.args:
         return render_template('layout.html', years = get_year_options(names))
 
-def get_year_options(names):
+    def get_year_options(names):
     years = []
     print("RunningOP")
     for data in names:
@@ -35,7 +30,7 @@ def get_year_options(names):
         options = options + Markup("<option value=\"" + data + "\">" + data + "</option>")
     return options
 
-def average_age(year, names):
+    def average_age(year, names):
     print("RunningAge")
     points = float(0)
     total = float(0)
@@ -46,7 +41,7 @@ def average_age(year, names):
     avg = float(total//points)
     return avg
     
-def get_name_options(years,names):
+    def get_name_options(years,names):
     namelist = []
     print("RunningCOP")
     for name in names:
@@ -57,7 +52,7 @@ def get_name_options(years,names):
         options = options + Markup("<option value=\"" + data + "\">" + data + "</option>")
     return options
     
-def get_name_age(name, names):
+    def get_name_age(name, names):
     print("RunningCAge")
     for name1 in names:
         if name1["Name"] == name:
@@ -70,7 +65,12 @@ def get_name_year(name, names):
         if data["Name"] == name:
             year = data["birth.date.year"]
     return year
- 
+@app.route("/p1")
+def render_first():
+    return render_template('page1.html')
+@app.route("/p2")
+def render_first2():
+    return render_template('page2.html')
 @app.route("/p3")
 def render_first3():
     return render_template('page3.html')
