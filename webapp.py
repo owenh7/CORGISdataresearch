@@ -27,16 +27,16 @@ def render_first4():
 
         
      if 'names' in request.args:
-        return render_template('main.html', years = get_year_options(counties), average_age = average_age(get_county_year(request.args['counties'],counties), counties), counties = get_county_options(get_county_year(request.args['counties'],counties),counties), county_age = get_county_age(request.args['counties'],counties))
+        return render_template('main.html', years = get_year_options(names), average_age = average_age(get_name_year(request.args['names'],names), names), names = get_name_options(get_name_year(request.args['names'],names),names), names_age = get_name_age(request.args['names'],names))
     if 'years' in request.args:
-        return render_template('main.html', years = get_year_options(counties), average_age = average_age(request.args['years'], counties), counties = get_county_options(request.args['years'],counties))
-    elif 'years' not in request.args and 'counties' not in request.args:
-        return render_template('main.html', years = get_year_options(counties))
+        return render_template('main.html', years = get_year_options(names), average_age = average_age(request.args['years'], names), names = get_name_options(request.args['years'],names))
+    elif 'years' not in request.args and 'names' not in request.args:
+        return render_template('main.html', years = get_year_options(names))
 
-def get_year_options(counties):
+def get_year_options(names):
     years = []
     print("RunningOP")
-    for data in counties:
+    for data in names:
         if data["Year"] not in years:
             years.append(data["Year"])
     options = ""
@@ -44,39 +44,39 @@ def get_year_options(counties):
         options = options + Markup("<option value=\"" + data + "\">" + data + "</option>")
     return options
 
-def average_age(year, counties):
+def average_age(year, names):
     print("RunningAge")
     points = float(0)
     total = float(0)
-    for county in counties:
-        if county["Year"] == year:
-            total = total + county["Age"]["Percent Under 18 Years"]
+    for name in names:
+        if name["Year"] == year:
+            total = total + name["Age"]["Percent Under 18 Years"]
             points=points + 1
     avg = float(total//points)
     return avg
     
-def get_county_options(years,counties):
-    countylist = []
+def get_name_options(years,names):
+    namelist = []
     print("RunningCOP")
-    for county in counties:
-        if county["Year"] == years :
-            countylist.append(county["County"])
+    for name in names:
+        if name["Year"] == years :
+            namelist.append(name["Name"])
     options = ""
-    for data in countylist:
+    for data in namelist:
         options = options + Markup("<option value=\"" + data + "\">" + data + "</option>")
     return options
     
-def get_county_age(county, counties):
+def get_name_age(name, names):
     print("RunningCAge")
-    for county1 in counties:
-        if county1["County"] == county:
-            return county1["Age"]["Percent Under 18 Years"]
+    for name1 in names:
+        if name1["Name"] == name:
+            return name1["Age"]["Percent Under 18 Years"]
  
-def get_county_year(county, counties):
+def get_name_year(name, names):
     print("RunningYear")
     year = ""
-    for data in counties:
-        if data["County"] == county:
+    for data in names:
+        if data["Name"] == name:
             year = data["Year"]
     return year
 if __name__ == "__main__":
