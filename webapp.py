@@ -29,7 +29,7 @@ def get_year_options(names):
     years = []
     print("RunningOP")
     for data in names:
-        if data["Year"] not in years:
+        if data["year"] not in years:
             years.append(data["Year"])
     options = ""
     for data in years:
@@ -41,7 +41,7 @@ def average_age(year, names):
     points = float(0)
     total = float(0)
     for name in names:
-        if name["Year"] == year:
+        if name["year"] == year:
             total = total + name["Age"]["Percent Under 18 Years"]
             points=points + 1
     avg = float(total//points)
@@ -51,7 +51,7 @@ def get_name_options(years,names):
     namelist = []
     print("RunningCOP")
     for name in names:
-        if name["Year"] == years :
+        if name["year"] == years :
             namelist.append(name["Name"])
     options = ""
     for data in namelist:
@@ -69,7 +69,7 @@ def get_name_year(name, names):
     year = ""
     for data in names:
         if data["Name"] == name:
-            year = data["Year"]
+            year = data["year"]
     return year
     return render_template('page2.html')
 @app.route("/p3")
