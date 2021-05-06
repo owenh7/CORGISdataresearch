@@ -16,8 +16,6 @@ def render_first():
     return render_template('page1.html')
 @app.route("/p2")
 def render_first2():
-  with open('medal_of_honor.json') as medal_data:
-    names = json.load(medal_data)
     if 'names' in request.args:
         return render_template('layout.html', years = get_year_options(names), average_age = average_age(get_name_year(request.args['names'],names), names), names = get_name_options(get_name_year(request.args['names'],names),names), names_age = get_name_age(request.args['names'],names))
     if 'years' in request.args:
