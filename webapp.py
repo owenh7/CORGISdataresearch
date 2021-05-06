@@ -69,7 +69,7 @@ def get_name_year(name, names):
         if data["Name"] == name:
             year = data["birth.date.year"]
     return year
-    return render_template('page2.html')
+ 
 @app.route("/p3")
 def render_first3():
     return render_template('page3.html')
