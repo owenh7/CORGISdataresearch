@@ -5,15 +5,25 @@
 {% block title %}MVP2{% endblock %}
 
 {% block content %}
-     <title>MedalofHonorStatistics</title>
-<h1>Medal of Honor Statistics</h1>
-<p>Select Name of Recipient</p>
+     <title>AgeMetrics</title>
+<h1>Age Database</h1>
+<p>Enter your year and name to receive age data</p>
 <form action="/">
-  <label for="Citations">Choose a Recipient:</label>
-  <select name="citations">
-    {{citations}}
+  <label for="Years">Choose a Year:</label>
+  <select name="years">
+    {{years}}
   </select>
   <br><br>
   <input type="submit">
 </form>
+<p> Percentage of the population under 18 years old: {{ average_age }}%</p>
+<form action="/">
+  <label for="Names">Choose a Name:</label>
+  <select name="names">
+    {{names}}
+  </select>
+  <br><br>
+  <input type="submit">
+</form>
+<p> Percentage of the population under 18 years old within the county: {{ name_age }}%</p>
 {% endblock %}
