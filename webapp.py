@@ -50,13 +50,13 @@ def get_name_options(years,names):
     options = ""
     for data in namelist:
         options = options + Markup("<option value=\"" + data + "\">" + data + "</option>")
-    return options
+        return options
     
 def get_name_age(name, names):
     print("RunningCAge")
     for name1 in names:
         if name1["Name"] == name:
-    return name1["Age"]["Percent Under 18 Years"]
+            return name1["Age"]["Percent Under 18 Years"]
  
 def get_name_year(name, names):
     print("RunningYear")
