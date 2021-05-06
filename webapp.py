@@ -19,7 +19,7 @@ def render_main():
     elif 'years' not in request.args and 'names' not in request.args:
         return render_template('layout.html', years = get_year_options(names))
 
-    def get_year_options(names):
+ def get_year_options(names):
     years = []
     print("RunningOP")
     for data in names:
@@ -30,7 +30,7 @@ def render_main():
         options = options + Markup("<option value=\"" + data + "\">" + data + "</option>")
     return options
 
-    def average_age(year, names):
+def average_age(year, names):
     print("RunningAge")
     points = float(0)
     total = float(0)
@@ -41,7 +41,7 @@ def render_main():
     avg = float(total//points)
     return avg
     
-    def get_name_options(years,names):
+def get_name_options(years,names):
     namelist = []
     print("RunningCOP")
     for name in names:
@@ -52,7 +52,7 @@ def render_main():
         options = options + Markup("<option value=\"" + data + "\">" + data + "</option>")
     return options
     
-    def get_name_age(name, names):
+def get_name_age(name, names):
     print("RunningCAge")
     for name1 in names:
         if name1["Name"] == name:
