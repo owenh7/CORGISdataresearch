@@ -17,11 +17,11 @@ def render_first():
 @app.route("/p2")
 def render_first2():
     if 'names' in request.args:
-        return render_template('main.html', years = get_year_options(names), average_age = average_age(get_name_year(request.args['names'],names), names), names = get_name_options(get_name_year(request.args['names'],names),names), names_age = get_name_age(request.args['names'],names))
+        return render_template('layout.html', years = get_year_options(names), average_age = average_age(get_name_year(request.args['names'],names), names), names = get_name_options(get_name_year(request.args['names'],names),names), names_age = get_name_age(request.args['names'],names))
     if 'years' in request.args:
-        return render_template('main.html', years = get_year_options(names), average_age = average_age(request.args['years'], names), names = get_name_options(request.args['years'],names))
+        return render_template('layout.html', years = get_year_options(names), average_age = average_age(request.args['years'], names), names = get_name_options(request.args['years'],names))
     elif 'years' not in request.args and 'names' not in request.args:
-        return render_template('main.html', years = get_year_options(names))
+        return render_template('layout.html', years = get_year_options(names))
 
 def get_year_options(names):
     years = []
