@@ -77,7 +77,7 @@ def render_first3():
 @app.route("/p4")
 def render_first4():
     return render_template('page4.html')
-@app.route("/?year=1880")
+@app.route("/?years=1880")
 def render_first5():
     return render_template('one.html')
 
