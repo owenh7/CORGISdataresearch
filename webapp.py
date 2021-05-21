@@ -28,7 +28,7 @@ def get_state_options(counties):
     states = []
     print("RunningOP")
     for data in counties:
-        if data["State"] not in states:
+        if data["name"] not in states:
             states.append(data["State"])
     options = ""
     for data in states:
@@ -40,7 +40,7 @@ def average_age(state, counties):
     points = float(0)
     total = float(0)
     for county in counties:
-        if county["State"] == state:
+        if county["name"] == state:
             total = total + county["Age"]["Percent Under 18 Years"]
             points=points + 1
     avg = float(total//points)
@@ -50,7 +50,7 @@ def get_county_options(states,counties):
     countylist = []
     print("RunningCOP")
     for county in counties:
-        if county["State"] == states :
+        if county["name"] == states :
             countylist.append(county["County"])
     options = ""
     for data in countylist:
@@ -68,7 +68,7 @@ def get_county_state(county, counties):
     state = ""
     for data in counties:
         if data["County"] == county:
-            state = data["State"]
+            state = data["name"]
     return state
     return render_template('page2.html')
 @app.route("/p3")
