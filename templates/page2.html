@@ -9,30 +9,21 @@
 <h1>Age Database</h1>
 <p>Enter your year and name to receive age data</p>
 <form action="/">
-  <label for="Years">Choose a year from the 1880's:</label>
-  <select name="years">
-    <option value="1880">1880</option>
-    <option value="1881">1881</option>
-    <option value="1882">1882</option>
-    <option value="1883">1883</option>
-    <option value="1884">1884</option>
-    <option value="1885">1885</option>
-    <option value="1886">1886</option>
-    <option value="1887">1887</option>
-    <option value="1888">1888</option>
-    <option value="1889">1889</option>
+  <label for="States">Choose a State:</label>
+  <select name="states">
+    {{states}}
   </select>
   <br><br>
   <input type="submit">
 </form>
 <p> Percentage of the population under 18 years old: {{ average_age }}%</p>
 <form action="/">
-  <label for="Names">Choose a Name:</label>
-  <select name="names">
-    {{names}}
+  <label for="Counties">Choose a County:</label>
+  <select name="counties">
+    {{counties}}
   </select>
   <br><br>
   <input type="submit">
 </form>
-<p> Percentage of the population under 18 years old within the county: {{ name_age }}%</p>
+<p> Percentage of the population under 18 years old within the county: {{ county_age }}%</p>
 {% endblock %}
