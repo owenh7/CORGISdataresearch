@@ -60,14 +60,14 @@ def get_county_options(states,counties):
 def get_county_age(county, counties):
     print("RunningCAge")
     for county1 in counties:
-        if county1["County"] == county:
+        if county1["issued"] == county:
             return county1["Age"]["Percent Under 18 Years"]
  
 def get_county_state(county, counties):
     print("RunningState")
     state = ""
     for data in counties:
-        if data["County"] == county:
+        if data["issued"] == county:
             state = data["name"]
     return state
     return render_template('page2.html')
