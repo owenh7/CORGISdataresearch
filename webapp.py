@@ -10,7 +10,6 @@ def render_main():
     print("RunningMain")
     with open('medal_of_honor.json') as medal_data:
         counties = json.load(medal_data)
-        names = json.load(medal_data)
     return render_template('layout.html')
 @app.route("/p1")
 def render_first():
