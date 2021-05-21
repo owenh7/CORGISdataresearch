@@ -8,14 +8,14 @@ app = Flask(__name__, template_folder='templates')
 @app.route("/")
 def render_main():
     print("RunningMain")
-    with open('medal_of_honor.json') as medal_data:
-        counties = json.load(medal_data)
     return render_template('layout.html')
 @app.route("/p1")
 def render_first():
     return render_template('page1.html')
 @app.route("/p2")
 def render_first2():
+    with open('medal_of_honor.json') as medal_data:
+        counties = json.load(medal_data)
     
      if 'counties' in request.args:
         return render_template('page2.html', states = get_state_options(counties), average_age = average_age(get_county_state(request.args['counties'],counties), counties), counties = get_county_options(get_county_state(request.args['counties'],counties),counties), county_age = get_county_age(request.args['counties'],counties))
