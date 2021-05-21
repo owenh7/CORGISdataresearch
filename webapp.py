@@ -29,7 +29,7 @@ def get_state_options(counties):
     print("RunningOP")
     for data in counties:
         if data["name"] not in states:
-            states.append(data["State"])
+            states.append(data["name"])
     options = ""
     for data in states:
         options = options + Markup("<option value=\"" + data + "\">" + data + "</option>")
