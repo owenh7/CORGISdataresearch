@@ -60,7 +60,7 @@ def get_county_age(county, counties):
     print("RunningCAge")
     for county1 in counties:
         if county1["County"] == county:
-            return county1["Age"]["Percent Under 18 Years"]
+    return county1["Age"]["Percent Under 18 Years"]
  
 def get_county_state(county, counties):
     print("RunningState")
