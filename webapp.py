@@ -18,9 +18,9 @@ def render_first2():
         counties = json.load(medal_data)
     
     if 'counties' in request.args:
-        return render_template('page2.html', states = get_state_options(counties), average_age = average_age(get_county_state(request.args['counties'],counties), counties), counties = get_county_options(get_county_state(request.args['counties'],counties),counties), county_age = get_county_age(request.args['counties'],counties))
+        return render_template('page2.html', states = get_state_options(counties), average_issued = average_issued(get_county_state(request.args['counties'],counties), counties), counties = get_county_options(get_county_state(request.args['counties'],counties),counties), county_issued = get_county_issued(request.args['counties'],counties))
     if 'states' in request.args:
-        return render_template('page2.html', states = get_state_options(counties), average_age = average_age(request.args['states'], counties), counties = get_county_options(request.args['states'],counties))
+        return render_template('page2.html', states = get_state_options(counties), average_issued = average_issued(request.args['states'], counties), counties = get_county_options(request.args['states'],counties))
     elif 'states' not in request.args and 'counties' not in request.args:
         return render_template('page2.html', states = get_state_options(counties))
 
@@ -35,7 +35,7 @@ def get_state_options(counties):
         options = options + Markup("<option value=\"" + data + "\">" + data + "</option>")
     return options
 
-def average_age(state, counties):
+def average_issued(state, counties):
     print("RunningAge")
     points = float(0)
     total = float(0)
