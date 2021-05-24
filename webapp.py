@@ -41,7 +41,7 @@ def average_issued(state, counties):
     total = float(0)
     for county in counties:
         if county["name"] == state:
-            total = total + county["awarded"]
+            total = total + county["citation"]
             points=points + 1
     avg = float(total//points)
     return avg
@@ -51,7 +51,7 @@ def get_county_options(states,counties):
     print("RunningCOP")
     for county in counties:
         if county["name"] == states :
-            countylist.append(county["County"])
+            countylist.append(county["citation"])
     options = ""
     for data in countylist:
         options = options + Markup("<option value=\"" + data + "\">" + data + "</option>")
@@ -60,8 +60,8 @@ def get_county_options(states,counties):
 def get_county_age(county, counties):
     print("RunningCAge")
     for county1 in counties:
-        if county1["awarded"] == county:
-            return county1["awarded"]
+        if county1["citation"] == county:
+            return county1["citation"]
  
 def get_county_state(county, counties):
     print("RunningState")
