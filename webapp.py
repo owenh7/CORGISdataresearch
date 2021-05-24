@@ -17,12 +17,7 @@ def render_first2():
     with open('medal_of_honor.json') as medal_data:
         counties = json.load(medal_data)
     
-    if 'counties' in request.args:
-        return render_template('page2.html', states = get_state_options(counties), awarded = awarded(get_county_state(request.args['counties'],counties), counties), counties = get_county_options(get_county_state(request.args['counties'],counties),counties), awarded = awarded(request.args['counties'],counties))
-    if 'states' in request.args:
-        return render_template('page2.html', states = get_state_options(counties), awarded = awarded(request.args['states'], counties), counties = get_county_options(request.args['states'],counties))
-    elif 'states' not in request.args and 'counties' not in request.args:
-        return render_template('page2.html', states = get_state_options(counties))
+    
 
 def get_state_options(counties):
     states = []
