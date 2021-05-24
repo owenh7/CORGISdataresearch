@@ -17,9 +17,9 @@ def render_first2():
     with open('medal_of_honor.json') as medal_data:
         counties = json.load(medal_data)
     if 'counties' in request.args:
-        return render_template('page2.html', states = get_state_options(counties), awarded.citation = awarded_citation(get_county_state(request.args['counties'],counties), counties), counties = get_county_options(get_county_state(request.args['counties'],counties),counties), county_awarded = get_county_awarded(request.args['counties'],counties))
+        return render_template('page2.html', states = get_state_options(counties), awarded_citation = awarded.citation(get_county_state(request.args['counties'],counties), counties), counties = get_county_options(get_county_state(request.args['counties'],counties),counties), county_awarded = get_county_awarded(request.args['counties'],counties))
     if 'states' in request.args:
-        return render_template('page2.html', states = get_state_options(counties), awarded.citation = awarded_citation(request.args['states'], counties), counties = get_county_options(request.args['states'],counties))
+        return render_template('page2.html', states = get_state_options(counties), awarded_citation = awarded.citation(request.args['states'], counties), counties = get_county_options(request.args['states'],counties))
     elif 'states' not in request.args and 'counties' not in request.args:
         return render_template('page2.html', states = get_state_options(counties))
     
