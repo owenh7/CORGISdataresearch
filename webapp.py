@@ -41,7 +41,7 @@ def average_age(state, counties):
     total = float(0)
     for county in counties:
         if county["name"] == state:
-            total = total + county["Age"]["Percent Under 18 Years"]
+            total = total + county["issued"]["Percent Under 18 Years"]
             points=points + 1
     avg = float(total//points)
     return avg
