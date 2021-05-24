@@ -41,7 +41,7 @@ def average_issued(state, counties):
     total = float(0)
     for county in counties:
         if county["name"] == state:
-            total = total + county["issued"]["Percent Under 18 Years"]
+            total = total + county["awarded"]
             points=points + 1
     avg = float(total//points)
     return avg
