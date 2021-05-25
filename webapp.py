@@ -48,7 +48,7 @@ def get_issued_options(states,counties):
     print("RunningCOP")
     for issued in counties:
         if issued["name"] == states :
-            issuedlist.append(issued["issued"])
+            issuedlist.append(["issued"])
     options = ""
     for data in issuedlist:
         options = options + Markup("<option value=\"" + data + "\">" + data + "</option>")
