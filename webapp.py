@@ -45,11 +45,11 @@ def awarded_citation(state, counties):
     return total
     
 def get_county_options(states,counties):
-    countylist = []
+    citationlist = []
     print("RunningCOP")
     for county in counties:
         if county["name"] == states :
-            countylist.append(county["citation"])
+            citationlist.append(county["citation"])
     options = ""
     for data in countylist:
         options = options + Markup("<option value=\"" + data + "\">" + data + "</option>")
