@@ -49,7 +49,7 @@ def get_county_options(states,counties):
     print("RunningCOP")
     for county in counties:
         if county["name"] == states :
-            countylist.append(county["citationcitationcitation"])
+            countylist.append(county["citation"])
     options = ""
     for data in countylist:
         options = options + Markup("<option value=\"" + data + "\">" + data + "</option>")
@@ -58,7 +58,7 @@ def get_county_options(states,counties):
 def get_county_awarded(county, counties):
     print("RunningCAge")
     for county1 in counties:
-        if county1["citationcitation"] == county:
+        if county1["citation"] == county:
             return county1["awarded"]["citation"]
  
 def get_county_state(county, counties):
