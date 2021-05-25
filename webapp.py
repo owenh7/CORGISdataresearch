@@ -44,30 +44,7 @@ def awarded_citation(state, counties):
             total = county["awarded"]["citation"]
     return total
     
-def get_county_options(states,counties):
-    countylist = []
-    print("RunningCOP")
-    for county in counties:
-        if county["name"] == states :
-            countylist.append(county["County"])
-    options = ""
-    for data in countylist:
-        options = options + Markup("<option value=\"" + data + "\">" + data + "</option>")
-    return options
-    
-def get_county_awarded(county, counties):
-    print("RunningCAge")
-    for county1 in counties:
-        if county1["County"] == county:
-            return county1["awarded"]["citation"]
- 
-def get_county_state(county, counties):
-    print("RunningState")
-    state = ""
-    for data in counties:
-        if data["County"] == county:
-            state = data["name"]
-    return state
+
     return render_template('page2.html')
 @app.route("/p3")
 def render_first3():
