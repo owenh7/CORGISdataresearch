@@ -43,7 +43,7 @@ def awarded_citation(state, counties):
         if issued["name"] == state:
             total = issued["awarded"]["citation"]
     return total
-def get_county_options(states,counties):
+def get_issued_options(states,counties):
     issuedlist = []
     print("RunningCOP")
     for issued in counties:
