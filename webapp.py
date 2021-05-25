@@ -17,9 +17,9 @@ def render_first2():
     with open('medal_of_honor.json') as medal_data:
         counties = json.load(medal_data)
     if 'counties' in request.args:
-        return render_template('page2.html', states = get_state_options(counties), awarded_citation = awarded_citation(get_county_state(request.args['counties'],counties), counties), counties = get_county_options(get_county_state(request.args['counties'],counties),counties), county_awarded = get_county_awarded(request.args['counties'],counties))
+        return render_template('page2.html', states = get_state_options(counties), awarded_citation = awarded_citation(get_issued_state(request.args['counties'],counties), counties), counties = get_issued_options(get_issued_state(request.args['counties'],counties),counties), issued_awarded = get_issued_awarded(request.args['counties'],counties))
     if 'states' in request.args:
-        return render_template('page2.html', states = get_state_options(counties), awarded_citation = awarded_citation(request.args['states'], counties), counties = get_county_options(request.args['states'],counties))
+        return render_template('page2.html', states = get_state_options(counties), awarded_citation = awarded_citation(request.args['states'], counties), counties = get_issued_options(request.args['states'],counties))
     elif 'states' not in request.args and 'counties' not in request.args:
         return render_template('page2.html', states = get_state_options(counties))
     
@@ -39,12 +39,34 @@ def awarded_citation(state, counties):
     print("RunningAge")
     points = float(0)
     total = float(0)
-    for county in counties:
-        if county["name"] == state:
-            total = county["awarded"]["citation"]
+    for issued in counties:
+        if issued["name"] == state:
+            total = issued["awarded"]["citation"]
     return total
+def get_county_options(states,counties):
+    issuedlist = []
+    print("RunningCOP")
+    for issued in counties:
+        if issued["name"] == states :
+            issuedlist.append(issued["issued"])
+    options = ""
+    for data in issuedlist:
+        options = options + Markup("<option value=\"" + data + "\">" + data + "</option>")
+    return options
     
-
+def get_issued_awarded(issued, counties):
+    print("RunningCAge")
+    for issued1 in counties:
+        if issued1["issued"] == issued:
+            return issued1["awarded"]["citation"]
+ 
+def get_issued_state(issued, counties):
+    print("RunningState")
+    state = ""
+    for data in counties:
+        if data["issued"] == issued:
+            state = data["name"]
+    return state
     return render_template('page2.html')
 @app.route("/p3")
 def render_first3():
