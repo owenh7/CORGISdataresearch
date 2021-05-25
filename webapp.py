@@ -17,9 +17,9 @@ def render_first2():
     with open('medal_of_honor.json') as medal_data:
         counties = json.load(medal_data)
     if 'counties' in request.args:
-        return render_template('page2.html', states = get_state_options(counties), awarded_citation = awarded.citation(get_county_state(request.args['counties'],counties), counties), counties = get_county_options(get_county_state(request.args['counties'],counties),counties), county_citation = get_county_citation(request.args['counties'],counties))
+        return render_template('page2.html', states = get_state_options(counties), awarded_citation = awarded_citation(get_county_state(request.args['counties'],counties), counties), counties = get_county_options(get_county_state(request.args['counties'],counties),counties), county_citation = get_county_citation(request.args['counties'],counties))
     if 'states' in request.args:
-        return render_template('page2.html', states = get_state_options(counties), awarded_citation = awarded.citation(request.args['states'], counties), counties = get_county_options(request.args['states'],counties))
+        return render_template('page2.html', states = get_state_options(counties), awarded_citation = awarded_citation(request.args['states'], counties), counties = get_county_options(request.args['states'],counties))
     elif 'states' not in request.args and 'counties' not in request.args:
         return render_template('page2.html', states = get_state_options(counties))
     
@@ -35,13 +35,13 @@ def get_state_options(counties):
         options = options + Markup("<option value=\"" + data + "\">" + data + "</option>")
     return options
 
-def average_issued(state, counties):
-    print("RunningAge")
+def awarded_citation(state, counties):
+    print("RunningCitation")
     points = float(0)
     total = float(0)
     for county in counties:
         if county["name"] == state:
-            total = total + county["awarded_citation"]
+            total = total + county["citation"]
             points=points + 1
     avg = float(total//points)
     return avg
@@ -51,23 +51,23 @@ def get_county_options(states,counties):
     print("RunningCOP")
     for county in counties:
         if county["name"] == states :
-            countylist.append(county["awarded_citation"])
+            countylist.append(county["County"])
     options = ""
     for data in countylist:
         options = options + Markup("<option value=\"" + data + "\">" + data + "</option>")
     return options
     
-def get_county_age(county, counties):
-    print("RunningCAge")
+def get_county_citation(county, counties):
+    print("RunningCCitation")
     for county1 in counties:
-        if county1["awarded_citation"] == county:
-            return county1["awarded_citation"]
+        if county1["County"] == county:
+            return county1["citation"]
  
 def get_county_state(county, counties):
     print("RunningState")
     state = ""
     for data in counties:
-        if data["awarded_citation"] == county:
+        if data["County"] == county:
             state = data["name"]
     return state
     return render_template('page2.html')
