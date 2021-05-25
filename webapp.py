@@ -41,7 +41,7 @@ def awarded_citation(state, counties):
     total = float(0)
     for county in counties:
         if county["name"] == state:
-            total = total + county["citation"]
+            total = total + county["Citation"]
             points=points + 1
     avg = float(total//points)
     return avg
