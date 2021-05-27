@@ -52,7 +52,7 @@ def get_issued_options(states,counties):
             issuedlist.append(["issued"])
     options = ""
     for data in issuedlist:
-        str(issuedlist)
+        str(issued_list)
         options = options + Markup("<option value=\"" + data + "\">" + data + "</option>")
     return options
     
