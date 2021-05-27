@@ -52,6 +52,7 @@ def get_issued_options(states,counties):
             issuedlist.append(["issued"])
     options = ""
     for data in issuedlist:
+        str(awarded_citation)
         options = options + Markup("<option value=\"" + data + "\">" + data + "</option>")
     return options
     
