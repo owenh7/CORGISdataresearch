@@ -5,13 +5,16 @@
 {% block title %}MVP{% endblock %}
 
 {% block content %}     
-     <p> Percentage of the population under 18 years old:</p>
-<form action="/">
-  <label for="Counties">Choose a Medal:</label>
-  <select name="medals">
-    {{militaryrecord_organization}}
+     <title>Why did they recieve the Medal of Honor?</title>
+<h1>Age Database</h1>
+<p>Choose a name to see why they were awarded the Medal of Honor</p>
+<form action="/p2">
+  <label for="States">Choose a Name:</label>
+  <select name="states">
+    {{states}}
   </select>
   <br><br>
   <input type="submit">
+<p> This person was awarded the Medal of Honor: {{ awarded_citation }}</p>
 </form>
 {% endblock %}
