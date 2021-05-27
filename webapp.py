@@ -32,6 +32,7 @@ def get_state_options(counties):
             states.append(data["name"])
     options = ""
     for data in states:
+        str(awarded_citation))
         options = options + Markup("<option value=\"" + data + "\">" + data + "</option>")
     return options
 
