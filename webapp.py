@@ -17,9 +17,9 @@ def render_first2():
     with open('medal_of_honor.json') as medal_data:
         counties = json.load(medal_data)
     if 'counties' in request.args:
-        return render_template('page2.html', states = get_state_options(counties), awarded.citation = awarded.citation(get_issued_state(request.args['counties'],counties), counties), counties = get_issued_options(get_issued_state(request.args['counties'],counties),counties), issued_awarded = get_issued_awarded(request.args['counties'],counties))
+        return render_template('page2.html', states = get_state_options(counties), awarded_citation = awarded_citation(get_issued_state(request.args['counties'],counties), counties), counties = get_issued_options(get_issued_state(request.args['counties'],counties),counties), issued_awarded = get_issued_awarded(request.args['counties'],counties))
     if 'states' in request.args:
-        return render_template('page2.html', states = get_state_options(counties), awarded.citation = awarded.citation(request.args['states'], counties), counties = get_issued_options(request.args['states'],counties))
+        return render_template('page2.html', states = get_state_options(counties), awarded_citation = awarded_citation(request.args['states'], counties), counties = get_issued_options(request.args['states'],counties))
     elif 'states' not in request.args and 'counties' not in request.args:
         return render_template('page2.html', states = get_state_options(counties))
     
@@ -32,7 +32,7 @@ def get_state_options(counties):
             states.append(data["name"])
     options = ""
     for data in states:
-        str(awarded.citation)
+        str(awarded_citation)
         options = options + Markup("<option value=\"" + data + "\">" + data + "</option>")
     return options
 
@@ -52,7 +52,7 @@ def get_issued_options(states,counties):
             issuedlist.append(["issued"])
     options = ""
     for data in issuedlist:
-        str(awarded.citation)
+        str(awarded_citation)
         options = options + Markup("<option value=\"" + data + "\">" + data + "</option>")
     return options
     
