@@ -73,9 +73,9 @@ def render_first3():
     with open('medal_of_honor.json') as medal_data:
         counties = json.load(medal_data)
     if 'counties' in request.args:
-        return render_template('page3.html', states = get_state_options(counties), military_record_organization = military_record_organization(get_issued_state(request.args['counties'],counties), counties), counties = get_issued_options(get_issued_state(request.args['counties'],counties),counties), issued_military_record = get_issued_military_record(request.args['counties'],counties))
+        return render_template('page3.html', states = get_state_options(counties), militaryrecord_organization = militaryrecord_organization(get_issued_state(request.args['counties'],counties), counties), counties = get_issued_options(get_issued_state(request.args['counties'],counties),counties), issued_militaryrecord = get_issued_militaryrecord(request.args['counties'],counties))
     if 'states' in request.args:
-        return render_template('page3.html', states = get_state_options(counties), military_record_organization = military_record_organization(request.args['states'], counties), counties = get_issued_options(request.args['states'],counties))
+        return render_template('page3.html', states = get_state_options(counties), militaryrecord_organization = militaryrecord_organization(request.args['states'], counties), counties = get_issued_options(request.args['states'],counties))
     elif 'states' not in request.args and 'counties' not in request.args:
         return render_template('page3.html', states = get_state_options(counties))
     
@@ -97,7 +97,7 @@ def military_record_organization(state, counties):
     total = float(0)
     for issued in counties:
         if issued["name"] == state:
-            total = issued["military_record"]["orginization"]
+            total = issued["militaryrecord"]["orginization"]
     return total
 def get_issued_options(states,counties):
     issuedlist = []
@@ -114,7 +114,7 @@ def get_issued_awarded(issued, counties):
     print("RunningCAge")
     for issued1 in counties:
         if issued1["issued"] == issued:
-            return issued1["military_record"]["orginization"]
+            return issued1["militaryrecord"]["orginization"]
  
 def get_issued_state(issued, counties):
     print("RunningState")
