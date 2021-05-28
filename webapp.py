@@ -97,7 +97,7 @@ def militaryrecord_organization(state, counties):
     total = float(0)
     for issued in counties:
         if issued["name"] == state:
-            total = issued["military record"]["orginization"]
+            total = issued["military record"]["organization"]
     return total
 def get_issued_options(states,counties):
     issuedlist = []
@@ -114,7 +114,7 @@ def get_issued_militaryrecord(issued, counties):
     print("RunningCAge")
     for issued1 in counties:
         if issued1["issued"] == issued:
-            return issued1["military record"]["orginization"]
+            return issued1["military record"]["organization"]
  
 def get_issued_state(issued, counties):
     print("RunningState")
