@@ -73,9 +73,9 @@ def render_first3():
     with open('medal_of_honor.json') as medal_data:
         counties = json.load(medal_data)
     if 'counties' in request.args:
-        return render_template('page3.html', states = get_state_options(counties), military record_organization = military record_organization(get_issued_state(request.args['counties'],counties), counties), counties = get_issued_options(get_issued_state(request.args['counties'],counties),counties), issued_military record = get_issued_military record(request.args['counties'],counties))
+        return render_template('page3.html', states = get_state_options(counties), militaryrecord_organization = militaryrecord_organization(get_issued_state(request.args['counties'],counties), counties), counties = get_issued_options(get_issued_state(request.args['counties'],counties),counties), issued_militaryrecord = get_issued_militaryrecord(request.args['counties'],counties))
     if 'states' in request.args:
-        return render_template('page3.html', states = get_state_options(counties), military record_organization = military record_organization(request.args['states'], counties), counties = get_issued_options(request.args['states'],counties))
+        return render_template('page3.html', states = get_state_options(counties), militaryrecord_organization = militaryrecord_organization(request.args['states'], counties), counties = get_issued_options(request.args['states'],counties))
     elif 'states' not in request.args and 'counties' not in request.args:
         return render_template('page3.html', states = get_state_options(counties))
     
