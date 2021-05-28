@@ -91,7 +91,7 @@ def get_state_options(counties):
         options = options + Markup("<option value=\"" + str(data) + "\">" + str(data) + "</option>")
     return options
 
-def military record_organization(state, counties):
+def militaryrecord_organization(state, counties):
     print("RunningAge")
     points = float(0)
     total = float(0)
@@ -110,7 +110,7 @@ def get_issued_options(states,counties):
         options = options + Markup("<option value=\"" + str(data) + "\">" + str(data) + "</option>")
     return options
     
-def get_issued_military record(issued, counties):
+def get_issued_militaryrecord(issued, counties):
     print("RunningCAge")
     for issued1 in counties:
         if issued1["issued"] == issued:
